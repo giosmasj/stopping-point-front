@@ -17,6 +17,14 @@
       "**/*"
     ],
     "ios": {
+      "bundleIdentifier": "com.flatiron.capstone-frontend",
+      "buildNumber": "1.0.0",
+      "config": {
+        "googleMapsApiKey": "AIzaSyAOZ5dj9RwoLMXzF_M_EyaDuy9oxWS4Az8"
+      },
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "Allow Expo experiences to use your location"
+      },
       "supportsTablet": true
     },
     "web": {
