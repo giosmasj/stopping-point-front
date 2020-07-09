@@ -271,14 +271,6 @@ export default function MapMode(props) {
     {latitude: 39.3688730999999, longitude: -107.0328241},
     {latitude: 39.3310273, longitude: -106.9848271}
   ]
-
-  // const GOOGLE_MAPS_API_KEY = GOOGLE_MAPS_API_KEY
-  // const GOOGLE_MAPS_API_KEY = 'AIzaSyAOZ5dj9RwoLMXzF_M_EyaDuy9oxWS4Az8'
-  // const OPEN_WEATHER_API_KEY = 'b79a7913ac6bae2c4ab46c8c6d725a6f'
-  // const OPEN_WEATHER_API_KEY = OPEN_WEATHER_API_KEY
-// console.log(GOOGLE_MAPS_API_KEY)
-// console.log(OPEN_WEATHER_API_KEY)
-// console.log(process)
   return (
     <Modal visible={props.visible} style={styles.background}>
       <SafeAreaView style={styles.container, styles.background}>
@@ -486,11 +478,6 @@ export default function MapMode(props) {
               <CustomCallout >
               <Text style={styles.city}>{name7}</Text>
                 <Text style={styles.temp}>Currently: {weather7}°F and {description1}</Text>
-                {/* <CalloutSubview
-                onPress={() => console.log('button')}
-                 >
-                  <Text style={styles.weatherButton}>Weather Along the Way</Text>
-                </CalloutSubview> */}
               </CustomCallout>
             </Callout>
             </Marker> : null}
@@ -503,17 +490,13 @@ export default function MapMode(props) {
               <Callout
               alphaHitTest
               tooltip
-              
               style={styles.customView}
             >
               <CustomCallout >
               <Text style={styles.city}>{name8}</Text>
-                <Text style={styles.temp}>Currently: {weather8}°F and {description1}</Text>
-                {/* <CalloutSubview
-                onPress={() => console.log('button')}
-                 >
-                  <Text style={styles.weatherButton}>Weather Along the Way</Text>
-                </CalloutSubview> */}
+                <Text style={styles.temp}>
+                  Currently: {weather8}°F and {description1}
+                </Text>
               </CustomCallout>
             </Callout>
             </Marker> : null}
@@ -526,17 +509,13 @@ export default function MapMode(props) {
               <Callout
               alphaHitTest
               tooltip
-              
               style={styles.customView}
             >
               <CustomCallout >
               <Text style={styles.city}>{name9}</Text>
-                <Text style={styles.temp}>Currently: {weather9}°F and {description1}</Text>
-                {/* <CalloutSubview
-                onPress={() => console.log('button')}
-                 >
-                  <Text style={styles.weatherButton}>Weather Along the Way</Text>
-                </CalloutSubview> */}
+                <Text style={styles.temp}>
+                  Currently: {weather9}°F and {description1}
+                </Text>
               </CustomCallout>
             </Callout>
             </Marker> : null}
@@ -545,24 +524,10 @@ export default function MapMode(props) {
               coordinate={marker}
               identifier={'mk9'}
               image={require('./map-marker-2-16.png')}
-              // style={styles.customMarker}
-              // onPress={() => showCallout()}
-              // title="Test Title"
-              // description="Test Description"
-              // onPress={() => console.log('marker')}
               >
-              {/* <Callout style={styles.callout}
-              
-                onPress={() => console.log("the weather button got pressed")}
-              >
-                <View>
-                
-                </View>
-              </Callout> */}
               <Callout
               alphaHitTest
               tooltip
-              
               style={styles.customView}
             >
               <CustomCallout >
@@ -581,16 +546,13 @@ export default function MapMode(props) {
               origin={{latitude: 39.436895, longitude: -107.180255}}
               destination={{latitude: marker.latitude, longitude: marker.longitude}}
               strokeWidth={3.8}
-              
               strokeColor='#cd00cd'
               precision= "high"
               apikey={GOOGLE_MAPS_API_KEY}
               optimizeWaypoints={true}
               onStart={(params) => {
-                // console.log(`params ${Object.keys(params)}`);
               }}
               onReady={result => {
-                // console.log(`coordinates: ${result.coordinates.length}`)
                 const coordslength = result.coordinates.length
                 const first = parseInt(1 + (coordslength - 1)/10)
                 const second = (first * 2)
@@ -664,26 +626,12 @@ export default function MapMode(props) {
                 const lon9 = ninthCoords.longitude
                 const fetchURL9 = `http://api.openweathermap.org/data/2.5/weather?lat=${lat9}&lon=${lon9}&appid=${OPEN_WEATHER_API_KEY}&units=imperial`
                 weatherSearchHandler9(fetchURL9)
-                // console.log(ways)
               }}
-              // waypoints={ways}
-              // waypoints={
-              //   waypts
-              // }
-
               /> : null
-          // </MapViewDirections> : null
         }
           
         </MapView>
       </SafeAreaView>
-      {/* <MapInput
-        showMarker={showMarker}
-        showWeather={weatherSearchHandler}
-        panTo={panTo}
-        center={reCenter}
-        // ref={(map) => this._map = map}
-        showMyLocation={props.showMyLocation}/> */}
         <View>
         <GooglePlacesAutocomplete
         placeholder='Search'
@@ -704,12 +652,9 @@ export default function MapMode(props) {
             longitudeDelta: lngDelta
           }
           const fetchURL = `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${OPEN_WEATHER_API_KEY}&units=imperial`
-          // console.log(coordinates)
           showMarker(coordinates)
           weatherSearchHandler(fetchURL)
-          // props.center(coordinates)
           changeZoom(zoomCoords)
-          // console.log(coordinates)
         }}
       query={{
         key: GOOGLE_MAPS_API_KEY,
@@ -718,7 +663,6 @@ export default function MapMode(props) {
       nearbyPlacesAPI="GooglePlacesSearch"
       enablePoweredByContainer={false}
       currentLocation={true}
-      // currentLocationLabel="currentlocation!"
       styles={{
         container: {
           zIndex: 5,
