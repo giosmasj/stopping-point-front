@@ -783,16 +783,22 @@ export default function MapMode(props) {
       flex: 3
     },
     mapView: {
-      height: 730,
-      width: 375,
+      // height: 730,
+      // width: 375,
       flex: 1,
-      marginTop: 80,
+      // marginTop: 80,
       zIndex: 6,
-      position: 'absolute'
+      position: 'absolute',
+      justifyContent: "center",
+      width: '100%',
+      height: '100%',
     },
     background: {
       backgroundColor: '#E2F9FF',
-      flex: 3
+      flex: 3,
+      justifyContent: "center",
+      width: '100%',
+      height: '100%',
     },
     city: {
       fontSize: 23,

@@ -51,16 +51,22 @@ const styles = StyleSheet.create({
     backgroundColor: '#E2F9FF',
     alignItems: 'center',
     justifyContent: 'center',
-    flex: 3
+    flex: 3,
+    width: '100%',
+    height: '100%'
   },
   welcome: {
     fontSize: 42,
     textAlign: 'center',
-    marginTop: 130,
-    marginBottom: 110,
+    marginTop: 80,
+    // marginBottom: 110,
     fontWeight: 'bold',
     color: '#49535f',
-    opacity: 0.6
+    opacity: 0.6,
+    justifyContent: "center",
+    width: '100%',
+    height: '100%',
+    flex: 1
   },
   image: {
     justifyContent: "center",
