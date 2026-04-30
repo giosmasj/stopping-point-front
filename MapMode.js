@@ -273,7 +273,7 @@ export default function MapMode(props) {
   ]
   return (
     <Modal visible={props.visible} style={styles.background}>
-      <SafeAreaView style={styles.container, styles.background}>
+      <react-native-safe-area-context style={styles.container, styles.background}>
         <MapView
           // ref={(map) => this._map = map}
           provider={PROVIDER_GOOGLE}
@@ -631,7 +631,7 @@ export default function MapMode(props) {
         }
           
         </MapView>
-      </SafeAreaView>
+      </react-native-safe-area-context>
         <View>
         <GooglePlacesAutocomplete
         placeholder='Search'
