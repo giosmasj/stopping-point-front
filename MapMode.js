@@ -273,7 +273,7 @@ export default function MapMode(props) {
   ]
   return (
     <Modal visible={props.visible} style={styles.background}>
-      <react-native-safe-area-context style={styles.container, styles.background}>
+      <react-native-safe-area-context style={[styles.container, styles.background]}>
         <MapView
           // ref={(map) => this._map = map}
           provider={PROVIDER_GOOGLE}
@@ -295,7 +295,6 @@ export default function MapMode(props) {
           zoomEnabled={true}
           userLocationAnnotationTitle="You Are Here"
           showsCompass= {true}
-          zoomEnabled={true}
           // minZoomLevel={3}
           // maxZoomLevel={20}
           showLocation={showLocation}
